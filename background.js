@@ -20,8 +20,15 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   checkTabs();
 });
 
+// https://developer.chrome.com/docs/extensions/reference/runtime/#event-onStartup
+chrome.runtime.onStartup.addListener(() => {
+  console.log("startup");
+  checkTabs();
+});
+
 // https://developer.chrome.com/docs/extensions/reference/runtime/#event-onInstalled
 chrome.runtime.onInstalled.addListener(() => {
+  console.log("installed");
   checkTabs();
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
