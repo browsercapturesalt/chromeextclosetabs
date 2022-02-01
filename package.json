@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "pretty": "prettier -w manifest.json background.js popup.js"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
