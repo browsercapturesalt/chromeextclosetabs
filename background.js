@@ -11,13 +11,18 @@ function checkTabs() {
       }
     }
   });
+
+  setTimeout(checkTabs, 1000);
 }
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log("watch");
+  checkTabs();
+});
 
 // https://developer.chrome.com/docs/extensions/reference/runtime/#event-onInstalled
 chrome.runtime.onInstalled.addListener(() => {
   checkTabs();
-
-  setInterval(checkTabs, 1000);
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     chrome.declarativeContent.onPageChanged.addRules([
