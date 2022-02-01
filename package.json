@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "pretty": "prettier -w manifest.json background.js popup.js"
+    "pretty": "prettier -w manifest.json background.js popup.html style.css popup.js package.json"
   },
   "devDependencies": {
     "prettier": "^2.5.1"
